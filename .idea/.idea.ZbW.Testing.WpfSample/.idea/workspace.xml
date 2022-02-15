@@ -4,7 +4,9 @@
     <projectFile>ZbW.Testing.WpfSample.Client/ZbW.Testing.WpfSample.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f9c4352-d971-4a20-bba2-8cc108fe6bdc" name="Changes" comment="" />
+    <list default="true" id="5f9c4352-d971-4a20-bba2-8cc108fe6bdc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appveyor.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +57,7 @@
       <updated>1644945176315</updated>
       <workItem from="1644945185102" duration="1054000" />
       <workItem from="1644946405131" duration="1421000" />
+      <workItem from="1644956675545" duration="404000" />
     </task>
     <task id="LOCAL-00001" summary="- updated appveyor.yaml">
       <created>1644946512524</created>
