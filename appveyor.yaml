@@ -12,9 +12,9 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 before_build:
-  - cmd: nuget restore
+- cmd: nuget restore
 build_script:
-    cmd: dotnet build ZbW.Testing.WpfSample.sln
+- cmd: dotnet build ZbW.Testing.WpfSample.sln
 artifacts:
-  - path: ZbW.Testing.WpfSample.Client\bin\$(configuration)\netcoreapp3.1
-    name: ZbW.WpfSample
+- path: ZbW.Testing.WpfSample.Client\bin\$(configuration)\netcoreapp3.1
+  name: ZbW.WpfSample
