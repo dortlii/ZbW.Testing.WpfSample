@@ -20,9 +20,9 @@ before_build:
   - cmd: dotnet sonarscanner begin /o:"dortlii" /k:"dortlii_ZbW.Testing.WpfSample" /v:%APPVEYOR_BUILD_VERSION% /d:sonar.branch.name=%APPVEYOR_REPO_BRANCH% /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="894e17c795eb9fdad2a938dadf36745ac73acff0" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="CoverageResults\coverage.opencover.xml"
 build_script:
   - cmd: dotnet build ZbW.Testing.WpfSample.sln
-  - cmd: dotnet test ZbW.Testing.WpfSample.Client.IntegrationTests\ZbW.Testing.WpfSample.Client.IntegrationTests.csproj
-  - cmd: dotnet test ZbW.Testing.WpfSample.Client.UnitTests\ZbW.Testing.WpfSample.Client.UnitTests.csproj
-  - cmd: dotnet test ZbW.Testing.WpfSample.Libs.IpInfoInterface.IntegrationTests\ZbW.Testing.WpfSample.Libs.IpInfoInterface.IntegrationTests.csproj
+  - cmd: dotnet test ZbW.Testing.WpfSample.Client.IntegrationTests\ZbW.Testing.WpfSample.Client.IntegrationTests.csproj /p:CollectCoverage=true /p:CoverletOutput="../CoverageResults/"
+  - cmd: dotnet test ZbW.Testing.WpfSample.Client.UnitTests\ZbW.Testing.WpfSample.Client.UnitTests.csproj /p:CollectCoverage=true /p:CoverletOutput="../CoverageResults/" /p:MergeWith="../CoverageResults/coverage.json"
+  - cmd: dotnet test ZbW.Testing.WpfSample.Libs.IpInfoInterface.IntegrationTests\ZbW.Testing.WpfSample.Libs.IpInfoInterface.IntegrationTests.csproj /p:CollectCoverage=true /p:CoverletOutput="../CoverageResults/" /p:MergeWith="../CoverageResults/coverage.json" /p:CoverletOutputFormat=opencover
 after_build:
   - cmd: dotnet sonarscanner end /d:sonar.login="894e17c795eb9fdad2a938dadf36745ac73acff0"
 artifacts:
